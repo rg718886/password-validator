@@ -45,5 +45,59 @@ public class Validator {
             return false;
         }
     }
+    //at least 1 uppercase character
+    public static boolean uppercase(String password){
+        char temp;
+        int uppercase =0, i;
+        for (i=0; i<password.length()-1; i++){
+            temp = password.charAt(i);
+            if (Character.isUpperCase(temp)){
+                uppercase ++;
+            }
+        }
+        if (uppercase < 1){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    //at least 1 special character
+    public boolean specialchar(String password){
+        char temp;
+        int specialchar=0, i;
+        for (i=0; i<password.length()-1; i++){
+            temp = password.charAt(i);
+            if (!Character.isLetterOrDigit(temp)){
+                specialchar ++;
+            }
+        }
+        if (specialchar<1) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    //at least 1 digit
+    public boolean digits(String password){
+        char temp;
+        int digits=0, i;
+        for (i=0; i<password.length()-1; i++){
+            temp = password.charAt(i);
+            if (Character.isDigit(temp)){
+                digits++;
+            }
+
+        }
+        if (digits < 1){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+
 
 }

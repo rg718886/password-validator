@@ -8,7 +8,7 @@ public class JUNITtest {
     @BeforeClass
     public static void init() {
         validator = new Validator();
-        validator.setPassword("anypassword");
+        validator.setPassword("aAnypassword_123");
     }
     @Test
     public void cmptest() {
@@ -25,6 +25,23 @@ public class JUNITtest {
         boolean temp =  validator.length(validator.getPassword());
         assertEquals(true,temp);
     }
+
+    @Test
+    public void uppercase1(){
+        boolean temp = validator.uppercase(validator.getPassword());
+        assertEquals(true, temp);
+    }
+    @Test
+    public void specialchar1(){
+        boolean temp = validator.specialchar(validator.getPassword());
+        assertEquals(true, temp);
+    }
+    @Test
+    public void digits1(){
+        boolean temp = validator.digits(validator.getPassword());
+        assertEquals(true, temp);
+    }
+
 
 }
 
